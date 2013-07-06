@@ -23,7 +23,7 @@ require 'host_summary_parser'
 # get hostsummary by ssh login to ESXi host
 hostsummary_string = %x(ssh esxihost vim-cmd hostsvc/hostsummary)
 # parse hostsummary
-hostsummary = HostSummaryParser.parse(hostsummary_string)
+hostsummary = parse_host_summary(hostsummary_string)
 # output storage status info
 p hostsummary[:runtime][:healthSystemRuntime][:hardwareStatusInfo][:storageStatusInfo]
 ```

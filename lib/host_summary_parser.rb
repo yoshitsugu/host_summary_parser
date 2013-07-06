@@ -1,7 +1,7 @@
 require "host_summary_parser/version"
 
 class HostSummaryParser
-  def parse(string)
+  def self.parse(string)
     parsed = ""
     string.split("\n").each do |line|
       line.gsub!(/\(.+\)/,"")
@@ -20,6 +20,10 @@ class HostSummaryParser
       end
       parsed.gsub!(/"<unset>"/,"nil")
     end
-    eval(parsed)
+    begin
+      eval(parsed)
+    rescue
+      raise "cannot parse \"#{string.to_s}\""
+    end
   end
 end
