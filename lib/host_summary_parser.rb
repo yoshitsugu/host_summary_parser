@@ -1,4 +1,4 @@
-require "host_sammury_parser/version"
+require "host_summary_parser/version"
 
 class HostSummaryParser
   def parse(string)

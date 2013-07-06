@@ -1,4 +1,4 @@
-# ESXi HostSammuryParser
+# ESXi HostSummaryParser
 
 TODO: Write a gem description
 
@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'host_sammury_parser'
+    gem 'host_summary_parser'
 
 And then execute:
 
@@ -14,16 +14,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install host_sammury_parser
+    $ gem install host_summary_parser
 
 ## Usage
+```ruby
+require 'host_summary_parser'
 
-    # get hostsummary by ssh login to ESXi host
-    hostsummary_string = %x(ssh esxihost vim-cmd hostsvc/hostsummary)
-    # parse hostsummary
-    hostsummary = HostSummaryParser(hostsummary_string)
-    # output storage status info
-    p hostsummary[:runtime][:healthSystemRuntime][:hardwareStatusInfo][:storageStatusInfo]
+# get hostsummary by ssh login to ESXi host
+hostsummary_string = %x(ssh esxihost vim-cmd hostsvc/hostsummary)
+# parse hostsummary
+hostsummary = HostSummaryParser.parse(hostsummary_string)
+# output storage status info
+p hostsummary[:runtime][:healthSystemRuntime][:hardwareStatusInfo][:storageStatusInfo]
+```
 
 ## Contributing
 
