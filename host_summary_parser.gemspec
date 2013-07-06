@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'host_sammury_parser/version'
+require 'host_summary_parser/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "host_sammury_parser"
-  spec.version       = HostSammuryParser::VERSION
+  spec.name          = "host_summary_parser"
+  spec.version       = HostSummaryParser::VERSION
   spec.authors       = ["yoshitsugu"]
   spec.email         = ["zeroinon1206bass@gmail.com"]
   spec.description   = "get Hash object from command `vim-cmd hostsvc/hostsummary` "
